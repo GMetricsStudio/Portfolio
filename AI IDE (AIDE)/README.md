@@ -1,58 +1,78 @@
-# AI Dev IDE
+# AI Dev IDE - A Comprehensive Development Environment for Artificial Intelligence
 
-## Description
-The AI Dev IDE is a comprehensive development environment designed for artificial intelligence (AI) developers. It integrates cutting-edge AI models, advanced code editors, and powerful debugging tools to streamline the development process. The IDE features include but are not limited to:
+## Project Description
 
-- **Settings Integration**: Users can configure their development settings seamlessly within the application.
-- **Full Functionality**: The tool is fully operational with all necessary components for a complete development experience.
-- **Modular Design**: Easily extendable and customizable, allowing users to add new features or integrate additional tools as needed.
+**AI Dev IDE (Integrated Development Environment)** is a cutting-edge software tool designed to streamline and enhance the development process for artificial intelligence applications. This IDE provides a comprehensive set of features that cater to various stages of the AI application lifecycle, from planning and coding through testing and deployment.
 
 ## Features
-- **AI Model Integration**: Utilizes state-of-the-art AI models from Hugging Face's repository.
-- **Advanced Code Editor**: Integrates a sophisticated code editor powered by Pygments for syntax highlighting and other enhancements.
-- **Multi-Language Support**: Supports Python, C++, Java, and more out of the box with plans to expand support for additional languages.
-- **Debugging Tools**: Includes advanced debugging features such as breakpoints, variable inspection, and step execution.
-- **User Settings Management**: Allows users to customize their IDE settings including editor themes, font sizes, and other preferences.
+
+1. **Multi-Agent Pipeline**: The AI Dev IDE is equipped with a multi-agent pipeline that includes Planning, Coding, Reviewing, Testing, and Done agents. This allows for an enhanced workflow where tasks are automatically assigned to the most appropriate agent based on their role in the development process.
+
+2. **Code Generation**: Leveraging advanced language models like Hugging Face's Qwen/Qwen2.5-Coder-7B-Instruct, the Coder Agent generates high-quality code based on provided prompts and plans. This not only accelerates the coding phase but also ensures that generated code is aligned with project requirements.
+
+3. **Error Fixing**: The Fixer Agent uses advanced techniques to iteratively fix errors in code files. It employs language models to understand and correct issues, ensuring that the application remains stable and functional throughout development.
+
+4. **Testing Integration**: Built-in support for iterative testing ensures that every change is rigorously tested before moving on to the next phase. This reduces the risk of introducing bugs into the final product and accelerates the overall development process.
+
+5. **Settings Integration**: The IDE seamlessly integrates with a settings module, allowing users to customize their development environment according to personal preferences or project-specific requirements. Settings include language preferences, editor configurations, and more.
+
+6. **Cross-Platform Compatibility**: Developed using Python and leveraging the Tkinter library for the GUI, the AI Dev IDE is designed to run on a wide range of platforms including Windows, macOS, and Linux, ensuring broad accessibility for developers.
 
 ## Setup Instructions
+
 ### Prerequisites
-Before you begin, ensure you have the following installed:
-- Python 3.8 or later
-- Docker (for running the containerized version of the IDE)
+
+Before setting up the AI Dev IDE, ensure you have the following installed:
+- Python 3.7 or later
+- Pip (Python package installer)
+- PyInstaller (for packaging the application)
+- CUDA and cuDNN if using GPU acceleration for local inference
 
 ### Installation Steps
+
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/yourusername/ai-dev-ide.git
    cd ai-dev-ide
    ```
-2. **Install Python Dependencies**:
+
+2. **Create a Virtual Environment** (optional but recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+
+3. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
-3. **Build the Docker Image** (if you plan to run it in a container):
+
+4. **Build the Application** (for standalone executable):
    ```bash
-   docker build -t ai-dev-ide .
-   ```
-4. **Run the Docker Container**:
-   ```bash
-   docker run -p 5900:5900 -e VNC_PASSWORD=YourSecurePassword --rm --name ai-dev-ide ai-dev-ide
+   pyinstaller --onefile app.py  # For Windows
+   PyInstaller.__main__.py build_exe.py  # For macOS/Linux
    ```
 
-### Running the IDE
-1. **Local Execution**:
+5. **Run the Application**:
    ```bash
-   python app.py
+   python launcher.py  # For development mode
+   ./dist/AIDevIDE  # For standalone executable
    ```
-2. **Container Execution** (if you built the Docker image):
-   Open a web browser and navigate to `http://localhost:5900` using your VNC viewer, providing the password set in the previous step.
+
+## Usage
+
+1. **Launch the IDE** from the command line or through the desktop shortcut.
+2. Use the integrated terminal to run and debug your code.
+3. Utilize the GUI for task management, settings adjustments, and real-time feedback on development processes.
 
 ## Contributing
-Contributions are welcome! Please read the [CONTRIBUTING.md](https://github.com/yourusername/ai-dev-ide/blob/main/CONTRIBUTING.md) for guidelines on how to contribute to this project.
+
+Contributions are welcome! Please read the [CONTRIBUTING.md](https://github.com/yourusername/ai-dev-ide/blob/main/CONTRIBUTING.md) file for guidelines on how to contribute to this project.
 
 ## Support
-For additional support, please refer to the documentation or reach out through the issue tracker on GitHub.
+
+For support, please open an issue in the GitHub repository or contact the project maintainers directly.
 
 ---
 
-This README provides a comprehensive guide for users and contributors to understand and engage with the AI Dev IDE project effectively.
+Thank you for your interest in the AI Dev IDE! We hope this tool empowers you and your team to develop sophisticated AI applications more efficiently and effectively.
