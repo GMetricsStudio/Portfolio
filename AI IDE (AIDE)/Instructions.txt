@@ -1,0 +1,2 @@
+Run: docker build -t ai-dev-ide .
+then: docker run -p 5900:5900 -e VNC_PASSWORD=YourSecurePassword --rm --name ai-dev-ide ai-dev-ide
